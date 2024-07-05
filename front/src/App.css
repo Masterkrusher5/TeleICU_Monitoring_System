@@ -1,0 +1,52 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  text-align: center;
+  padding: 20px;
+}
+
+h2 {
+  color: #4a4e69;
+  margin-bottom: 20px;
+  font-size: 2.5em; /* Increase the font size */
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.label-file {
+  background-color: #9a8c98;
+  color: white;
+  padding: 15px 30px; /* Increase padding for larger button */
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: 1.2em; /* Increase font size */
+}
+
+.button-upload {
+  background-color: #c9ada7;
+  color: white;
+  padding: 15px 30px; /* Increase padding for larger button */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2em; /* Increase font size */
+}
+
+.button-upload:hover {
+  background-color: #d3bcbc;
+}
+
+.message {
+  margin-top: 20px;
+  color: #22223b;
+  font-weight: bold;
+  font-size: 1.2em; /* Increase font size */
+}
