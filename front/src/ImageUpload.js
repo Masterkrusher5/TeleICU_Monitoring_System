@@ -20,7 +20,7 @@ const ImageUpload = () => {
             const formData = new FormData();
             formData.append('file', selectedImage);
 
-            const response = await fetch('https://teleicu-monitoring-system-1yhf.onrender.com/execute', {
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/execute`, {
                 method: 'POST',
                 body: formData,
             });
