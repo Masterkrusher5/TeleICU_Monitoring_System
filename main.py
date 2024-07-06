@@ -18,7 +18,7 @@ app = FastAPI(
 origins = [
     "http://localhost:3000",  # Local development frontend URL
     "http://localhost:5173",  # Local development frontend URL
-    "https://tele-icu-detection.vercel.app"  # Production frontend URL
+    "https://teleicu-detection.vercel.app"  # Production frontend URL
 ]
 
 app.add_middleware(
