@@ -29,7 +29,7 @@ const ImageUpload = () => {
                 throw new Error(`Image upload failed: ${response.statusText}`);
             }
 
-            const data = await response.json(); // Assuming the server returns JSON with images
+            const data = await response.json();
 
             setModelResponse(data.images || []);
             setUploadMessage('Image uploaded and processed successfully.');
@@ -56,5 +56,4 @@ const ImageUpload = () => {
         </div>
     );
 };
-
 export default ImageUpload;
