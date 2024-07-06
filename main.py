@@ -16,8 +16,9 @@ app = FastAPI(
 )
 
 origins = [
-    "http://localhost:3000",  # Ensure this matches your frontend URL
-    "http://localhost:5173",  # Ensure this matches your frontend URL
+    "http://localhost:3000",  # Local development frontend URL
+    "http://localhost:5173",  # Local development frontend URL
+    "https://tele-icu-detection.vercel.app"  # Production frontend URL
 ]
 
 app.add_middleware(
@@ -27,6 +28,13 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Directory to save and serve processed images
+PROCESSED_DIRECTORY = "processed"
+os.makedirs(PROCESSED_DIRECTORY, exist_ok=True)
+
+# Serve processed images as static files
+app.mount("/processed", StaticFiles(directory=PROCESSED_DIRECTORY), name="processed")
 
 @app.post("/execute")
 async def execute(file: UploadFile = File(...)):
@@ -81,6 +89,6 @@ def delete_files_after_delay(directory, delay):
     
     threading.Thread(target=delete_files).start()
 
-if __name__ == "__main__":
+if _name_ == "_main_":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
